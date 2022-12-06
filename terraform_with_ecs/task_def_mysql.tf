@@ -1,4 +1,4 @@
-data "aws_subnets" "subnet" {
+data "aws_subnet" "subnet" {
   filter {
     name = "vpc-id"
     values = [aws_default_vpc.default.id]
