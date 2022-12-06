@@ -14,7 +14,7 @@ resource "aws_default_vpc" "default" {
 }
 resource "aws_lb" "default" {
   name            = var.alb_name
-  subnets         = data.aws_subnet.subnet.ids
+  subnets         = data.aws_subnet.subnet.id
   security_groups = [aws_security_group.ecs_sg.id]
   internal = false
   ip_address_type = "ipv4"
