@@ -162,7 +162,7 @@ resource "aws_ecs_service" "test-service-mysql" {
 
   network_configuration {
     security_groups  = [aws_security_group.ecs_sg-3306.id]
-    subnets          = data.aws_subnets.subnet.ids
+    subnets          = data.aws_subnets.subnet.id
     assign_public_ip = true
   }
   service_registries{
