@@ -42,7 +42,7 @@ jobs:
         id: build-image
         env:
           ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
-          ECR_REPOSITORY: snipe
+          ECR_REPOSITORY: snipe_it
           IMAGE_TAG: ${{ github.event.head_commit.message }}
         run: |
           echo $IMAGE_TAG
