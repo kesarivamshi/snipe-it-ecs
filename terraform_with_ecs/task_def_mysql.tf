@@ -149,10 +149,6 @@ resource "aws_ecs_task_definition" "test" {
     ]
 TASK_DEFINITION
 
-  runtime_platform {
-    operating_system_family = "LINUX"
-    
-  }
    volume {
     name      = "snipesql-vol"
   }
