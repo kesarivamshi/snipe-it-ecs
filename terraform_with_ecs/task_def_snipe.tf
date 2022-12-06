@@ -152,11 +152,7 @@ resource "aws_ecs_task_definition" "snipe-main" {
     }
   ]
 TASK_DEFINITION
-
-  runtime_platform {
-    operating_system_family = "LINUX"
-    
-  }
+   
    volume {
     name      = "snipe-vol"
     # host_path = "/ecs/service-storage"
@@ -174,7 +170,7 @@ resource "aws_ecs_service" "test-service-snipe-main" {
 
   network_configuration {
     security_groups  = [aws_security_group.ecs_sg-80.id]
-    subnets          = data.aws_subnets.subnet.ids
+    subnets          = data.aws_subnet.subnet.id
     assign_public_ip = true
   }
     load_balancer {
